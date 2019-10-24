@@ -1,0 +1,49 @@
+<!-- <div class="container">
+    <div class="row">
+        <section class="col-sm-12">
+            <h1>Welcome to Job portal</h1>
+            <div class="jumbotron">
+                <h2 class="display-4">Job Description goes here...</h2>
+                <a class="btn btn-primary btn-lg" routerLink="/profile" role="button">Edit Profile</a>
+            </div>
+        </section>
+    </div> -->
+
+    <div class="container">
+        <div class="row">
+            <section class="col-sm-12">
+                <div class="jumbotron">
+                    <h3 class="display-4">Welcome {{currentUser.principal.username}}.</h3>
+                    <a class="btn btn-primary btn-lg" routerLink="/profile" role="button">Edit Profile</a>
+                </div>
+            </section>
+        </div>
+        <hr>
+
+    
+        <div class="row">
+    
+            <div class="card col-sm-3 aqua-gradient animated fadeIn slower" id="applyForJob" (click)="onApplyNewJob()">
+                        <div class="upperContainerNewJob aqua-gradient">
+                            <h1>+</h1>
+                            <h2>Apply For Job</h2>
+                        </div>
+            </div>
+
+            <div class="card col-sm-3 blue-gradient animated fadeIn"  *ngFor = "let job of jobList">
+                <div class="card-body blue-gradient bwaves-light">
+                    <div class="upperContainer" data-toggle="modal" data-target="#viewJobModal" (click)="onEditHandler(job.jId)">
+                    <h5 class="card-title">{{job.jTitle}}</h5>
+                    <p>Last Date:{{job.jApplicationCloseDate}}</p>
+                    </div>
+                    <hr>
+                    <div>
+                            <!-- <button type="button" class="btn btn-primary btn-md col-md-6" data-toggle="modal" data-target="#editJobModal" (click)="onEditHandler(job.jId)"><img src="../../../../assets/images/editJob.png" style="width: 20px;height: 20px;" alt="editButton"><br>Edit</button>
+                            <button type="button" class="btn btn-danger btn-md col-md-6" (click)="onDeleteHandler(job.jId)"><img src="../../../../assets/images/deleteJob.png" style="width: 20px;height: 20px;" alt="deleteButton">Delete</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h4>Applied Jobs</h4>
+    </div>
